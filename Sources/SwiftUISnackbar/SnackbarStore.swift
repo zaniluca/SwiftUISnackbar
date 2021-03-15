@@ -35,6 +35,8 @@ public class SnackbarStore: ObservableObject {
     @Published var show: Bool = false
     @Published var style: SnackbarStyle = .default
     
+    public init() {}
+    
     /// Display a snackbar by specifing the title and optionally the text as ´String´
     /// - Author: Luca Zani
     /// - Parameters:
