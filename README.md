@@ -1,13 +1,15 @@
 # SwiftUISnackbar
 > A simple and ready to use Snackbar for your SwiftUI Application
-[SWIFTUI](https://img.shields.io/badge/Framework-SwiftUI-blue)
-[SPM](https://img.shields.io/badge/spm-compatible-brightgreen.svg?style=flat)
+![SWIFTUI](https://img.shields.io/badge/Framework-SwiftUI-blue)
+![SPM](https://img.shields.io/badge/spm-compatible-brightgreen.svg?style=flat)
 
 ## Screenshots
 > Coming soon.
 
 ## Release History
-
+* 0.0.2 - 18/03/2021
+    * Dismiss on tap
+    * Set dismiss timer
 * 0.0.1 - 15/03/2021
     * First relase
 

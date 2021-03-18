@@ -49,7 +49,7 @@ public class SnackbarStore: ObservableObject {
             self.title = Text(title)
             self.text = text != nil ? Text(text!) : nil
             self.style = style
-            self.show.toggle()
+            self.show = true
         }
     }
     
@@ -69,7 +69,8 @@ public class SnackbarStore: ObservableObject {
             self.title = title
             self.text = text
             self.style = style
-            self.show.toggle()
+            self.show = true
         }
     }
 }
+

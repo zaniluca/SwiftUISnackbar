@@ -12,8 +12,10 @@ internal struct Snackbar: View {
     private let action: (() -> Void)?
     private let extraBottomPadding: CGFloat
     private let viewOffset: CGFloat = 6
+    private let dismissOnTap: Bool
+    private let dismissAfter: Double?
     
-    internal init<Presenting>(isShowing: Binding<Bool>, presenting: Presenting, title: Text, text: Text?, style: SnackbarStyle, extraBottomPadding: CGFloat, actionText: String? = nil, action: (() -> Void)? = nil) where Presenting: View {
+    internal init<Presenting>(isShowing: Binding<Bool>, presenting: Presenting, title: Text, text: Text?, style: SnackbarStyle, extraBottomPadding: CGFloat, actionText: String? = nil, action: (() -> Void)? = nil, dismissOnTap: Bool = true, dismissAfter: Double? = 4) where Presenting: View {
         _isShowing = isShowing
         self.presenting = AnyView(presenting)
         self.title = title
@@ -22,10 +24,12 @@ internal struct Snackbar: View {
         self.actionText = actionText
         self.action = action
         self.extraBottomPadding = extraBottomPadding
+        self.dismissOnTap = dismissOnTap
+        self.dismissAfter = dismissAfter
         
     }
     
-    internal init<Presenting>(isShowing: Binding<Bool>, presenting: Presenting, title: String, text: String?, style: SnackbarStyle, extraBottomPadding: CGFloat, actionText: String? = nil, action: (() -> Void)? = nil) where Presenting: View {
+    internal init<Presenting>(isShowing: Binding<Bool>, presenting: Presenting, title: String, text: String?, style: SnackbarStyle, extraBottomPadding: CGFloat, actionText: String? = nil, action: (() -> Void)? = nil, dismissOnTap: Bool = true, dismissAfter: Double? = 4) where Presenting: View {
         _isShowing = isShowing
         self.presenting = AnyView(presenting)
         self.title = Text(title)
@@ -34,6 +38,8 @@ internal struct Snackbar: View {
         self.actionText = actionText
         self.action = action
         self.extraBottomPadding = extraBottomPadding
+        self.dismissOnTap = dismissOnTap
+        self.dismissAfter = dismissAfter
         
     }
     
@@ -87,14 +93,20 @@ internal struct Snackbar: View {
                 .transition(.move(edge: .bottom))
                 .animation(.spring())
                 .onAppear {
-                    guard !hasAction else { return }
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-                        withAnimation {
-                            self.isShowing = false
+//                    guard !hasAction else { return }
+                    if let dismissAfter = dismissAfter {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + dismissAfter) {
+                            withAnimation {
+                                self.isShowing = false
+                            }
                         }
                     }
                 }//: onAppear
+                .onTapGesture {
+                    if dismissOnTap {
+                        isShowing = false
+                    }
+                }
             }
             
         }//: VStack
@@ -126,5 +138,4 @@ internal struct Snackbar: View {
         return .black
     }
 }
-
 
