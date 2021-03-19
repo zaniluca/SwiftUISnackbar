@@ -1,10 +1,11 @@
 # SwiftUISnackbar
 > A simple and ready to use Snackbar for your SwiftUI Application
+
 ![SWIFTUI](https://img.shields.io/badge/Framework-SwiftUI-blue)
 ![SPM](https://img.shields.io/badge/spm-compatible-brightgreen.svg?style=flat)
 
 ## Screenshots
-> Coming soon.
+<img width="1280" alt="cover" src="https://user-images.githubusercontent.com/59318963/111759375-ccac0280-889d-11eb-9c84-87fd835698d9.png">
 
 ## Release History
 * 0.0.2 - 18/03/2021
