@@ -7,6 +7,11 @@
 ## Screenshots
 <img width="1280" alt="cover" src="https://user-images.githubusercontent.com/59318963/111759375-ccac0280-889d-11eb-9c84-87fd835698d9.png">
 
+## Installation
+You can find the installation guide here: [Installation Guide](https://github.com/ZaniLuca/SwiftUISnackbar/wiki/How-to-Install)
+
+Look at the [Wiki](https://github.com/ZaniLuca/SwiftUISnackbar/wiki) for how to use it.
+
 ## Release History
 * 0.0.2 - 18/03/2021
     * Dismiss on tap
