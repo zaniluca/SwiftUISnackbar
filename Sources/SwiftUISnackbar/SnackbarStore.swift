@@ -30,12 +30,12 @@ import SwiftUI
 @available(iOS 14.0, *)
 public class SnackbarStore: ObservableObject {
     
-    @Published var title: Text = Text("")
-    @Published var text: Text? = nil
-    @Published var show: Bool = false
-    @Published var style: SnackbarStyle = .default
-    @Published var actionText: String?
-    @Published var action: (() -> Void)?
+    @Published public var title: Text = Text("")
+    @Published public var text: Text? = nil
+    @Published public var show: Bool = false
+    @Published public var style: SnackbarStyle = .default
+    @Published public var actionText: String?
+    @Published public var action: (() -> Void)?
     
     public init() {}
     
