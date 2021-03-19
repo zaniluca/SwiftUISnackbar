@@ -106,7 +106,7 @@ internal struct Snackbar: View {
                     if dismissOnTap {
                         isShowing = false
                     }
-                }
+                }//: onTapGesture
             }
             
         }//: VStack

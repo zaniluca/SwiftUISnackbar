@@ -34,6 +34,8 @@ public class SnackbarStore: ObservableObject {
     @Published var text: Text? = nil
     @Published var show: Bool = false
     @Published var style: SnackbarStyle = .default
+    @Published var actionText: String?
+    @Published var action: (() -> Void)?
     
     public init() {}
     
@@ -49,6 +51,8 @@ public class SnackbarStore: ObservableObject {
             self.title = Text(title)
             self.text = text != nil ? Text(text!) : nil
             self.style = style
+            self.action = nil
+            self.actionText = nil
             self.show = true
         }
     }
@@ -69,6 +73,34 @@ public class SnackbarStore: ObservableObject {
             self.title = title
             self.text = text
             self.style = style
+            self.action = nil
+            self.actionText = nil
+            self.show = true
+        }
+    }
+    
+    /// Display a snackbar using SwiftUI `Text` object and adds and action to it
+    /// - Author: Luca Zani
+    /// - Parameters:
+    ///   - title: The bold text you want the `Snackbar` to display on top
+    ///   - text: The lighter text that you want displayed under the title (optional)
+    ///   - style: The `SnackbarStyle` wich specify the `Snackbar`'s background color
+    ///   - actionText: The text on the action button
+    ///   - action: The action you want to perform when the user touches the action button
+    /// - Note: You can use this `display()` method to **concatenate** many `Text` objects
+    /// ```
+    /// .display(title: Text("I'm a title!"), text: Text("Hi I'm a ") + Text("Bold").bold() + Text(" Description!"), style: .default, actionText: "Say Hi") {
+    ///     print("Hi!")
+    /// }
+    /// ```
+    /// - Version: 0.1
+    public func displayWithAction(title: Text, text: Text? = nil, style: SnackbarStyle = .default, actionText: String, action: (() -> Void)?) {
+        DispatchQueue.main.async {
+            self.title = title
+            self.text = text
+            self.style = style
+            self.action = action
+            self.actionText = actionText
             self.show = true
         }
     }
