@@ -123,9 +123,9 @@ internal struct Snackbar: View {
         case .default:
             return .accentColor
         case .warning:
-            return Color("Warning")
+            return Color("Warning", bundle: .module)
         case .error:
-            return Color("Error")
+            return Color("Error", bundle: .module)
         case .custom(color: let color):
             return color
         }
