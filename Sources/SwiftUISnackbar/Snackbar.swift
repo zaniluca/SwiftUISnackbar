@@ -69,6 +69,7 @@ internal struct Snackbar: View {
                     }
                     .font(.system(.body, design: .rounded))
                     .foregroundColor(textColor)
+                    .padding(.bottom, text == nil ? 23 : 0)
                     
                     Spacer()
                     
