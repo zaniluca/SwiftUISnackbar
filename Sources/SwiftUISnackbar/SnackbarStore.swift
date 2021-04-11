@@ -1,4 +1,6 @@
+#if canImport(SwiftUI)
 import SwiftUI
+#endif
 
 /// Utility class that's used to interact with a `Snackbar`.
 /// It offers a method to **display** the snackbar

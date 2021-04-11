@@ -1,4 +1,6 @@
+#if canImport(SwiftUI)
 import SwiftUI
+#endif
 
 @available(iOS 14.0, *)
 internal extension Color {

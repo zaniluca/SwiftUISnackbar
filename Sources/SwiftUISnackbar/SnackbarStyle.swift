@@ -1,4 +1,6 @@
+#if canImport(SwiftUI)
 import SwiftUI
+#endif
 
 /// Specifies the `Snackbar`'s background color
 /// - `.default`:  the app's accent color
