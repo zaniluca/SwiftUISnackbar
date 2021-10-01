@@ -14,7 +14,7 @@ Look at the [Wiki](https://github.com/ZaniLuca/SwiftUISnackbar/wiki) for how to 
 
 ## Release History
 * 1.0.0 - 01/10/2021
-    * First relase 🎉
+    * First release 🎉
     * Support for markdown inside Text (only iOS15)
 
 #### Pre-releases:
