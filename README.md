@@ -13,6 +13,11 @@ You can find the installation guide here: [Installation Guide](https://github.co
 Look at the [Wiki](https://github.com/ZaniLuca/SwiftUISnackbar/wiki) for how to use it.
 
 ## Release History
+* 1.0.0 - 01/10/2021
+    * First relase 🎉
+    * Support for markdown inside Text (only iOS15)
+
+#### Pre-releases:
 * 0.0.2 - 18/03/2021
     * Dismiss on tap
     * Set dismiss timer
