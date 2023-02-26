@@ -59,7 +59,7 @@ Or by using the Wrapper `SnackbarStore` that you can use to interact with the `S
 
 You can use it as a `@StateObject` or as an `@EnvironmentObject` so that you can use it by injecting it in the `View Hierarchy` making it accessible from any children view
 
-### @StateObject
+### Via `@StateObject`
 
 ```swift
 struct MyView: View {
@@ -73,7 +73,7 @@ struct MyView: View {
 }
 ```
 
-### @EnvironmentObject
+### Via `@EnvironmentObject`
 
 Remember to inject it in the `View Hierarchy` like so
 
